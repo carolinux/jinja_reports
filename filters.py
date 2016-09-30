@@ -19,5 +19,12 @@ def mpl_figure(context, fig):
     html = '<img src="data:image/png;base64,{}" />'.format(plot.mpl_to_base64(fig))
     return Markup(html) # this makes the html appear correctly, instead of as text
 
+@jinja2.contextfilter
+def bokeh_figure(context, fig):
+    script, div = plot.bokeh_to_html(fig)
+    return Markup(script+"<br>"+div)
+
 blueprint.add_app_template_filter(filter2)
 blueprint.add_app_template_filter(mpl_figure)
+blueprint.add_app_template_filter(bokeh_figure)
+blueprint.add_app_template_filter(mpl_to_bokeh_figure)

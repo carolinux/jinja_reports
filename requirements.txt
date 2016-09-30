@@ -1,1 +1,4 @@
 Flask
+bokeh==0.12.2
+numpy
+matplotlib

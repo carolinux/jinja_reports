@@ -5,13 +5,14 @@ from flask import (Flask, jsonify, request, render_template,
 
 import plot
 import filters
+import bokeh_example
 
 app = Flask(__name__)
 app.register_blueprint(filters.blueprint)
 
 @app.route('/', methods=["GET", "POST"])
 def show_launch_page():
-    return render_template('examples.html', plot=plot)
+    return render_template('examples.html', plot=plot, bokeh_example=bokeh_example)
 
 if __name__ == '__main__':
     print "Starting server at "+str(datetime.now())

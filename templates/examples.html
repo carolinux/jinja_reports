@@ -2,12 +2,27 @@
     <head>
         <title>Template + Plotting test</title>
 
+       <link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.2.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.2.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.2.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.2.min.js"></script> 
+
     </head>
 
     <p>1. Test that imported functions work, ie plot.add2(7) = 9 -> {{plot.add2(7)}}</p>
     <p>2. Test that matplotlib image works->  <img src="data:image/png;base64,{{plot.mpl_to_base64(plot.matplotlib_figure())}}" /></p>
+
     <p>3. Test that basic custom filter works-> {{plot.add2(7) | filter2}}</p>
     <p>4. Test that matplotlib image works->  {{plot.matplotlib_figure() |mpl_figure}}</p>
+    <p>5. Test that bokeh image works->  {{bokeh_example.iris() |bokeh_figure}}</p>
+    <p>6. Test function that returns multiple things -> 
+    {%set result = plot.complicated_function_that_returns_plot_and_number()%}
+    {{ result[0] |mpl_figure}} and number = {{result[1]}}.
 
 </body>
 </html>
