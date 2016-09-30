@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Template + Plotting test</title>
+
+    </head>
+
+    <p>1. Test that imported functions work, ie plot.add2(7) = 9 -> {{plot.add2(7)}}</p>
+    <p>2. Test that matplotlib image works->  <img src="data:image/png;base64,{{plot.mpl_to_base64(plot.matplotlib_figure())}}" /></p>
+    <p>3. Test that basic custom filter works-> {{plot.add2(7) | filter2}}</p>
+    <p>4. Test that matplotlib image works->  {{plot.matplotlib_figure() |mpl_figure}}</p>
+
+</body>
+</html>
+
