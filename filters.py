@@ -27,4 +27,3 @@ def bokeh_figure(context, fig):
 blueprint.add_app_template_filter(filter2)
 blueprint.add_app_template_filter(mpl_figure)
 blueprint.add_app_template_filter(bokeh_figure)
-blueprint.add_app_template_filter(mpl_to_bokeh_figure)
